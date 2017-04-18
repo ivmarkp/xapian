@@ -140,6 +140,12 @@ TradWeight::unserialise(const string & s) const
     return new TradWeight(k);
 }
 
+TradWeight *
+TradWeight::set_parameter_values(const string & /*s*/) const
+{
+    return new TradWeight(1.0);
+}
+
 double
 TradWeight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 			Xapian::termcount) const

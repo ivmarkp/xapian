@@ -150,6 +150,12 @@ PL2PlusWeight::unserialise(const string & s) const
     return new PL2PlusWeight(c, delta);
 }
 
+PL2PlusWeight *
+PL2PlusWeight::set_parameter_values(const string & /*s*/) const
+{
+    return new PL2PlusWeight(1.0, 1.0);
+}
+
 double
 PL2PlusWeight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 			   Xapian::termcount) const

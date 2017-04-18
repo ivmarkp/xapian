@@ -61,6 +61,12 @@ BoolWeight::unserialise(const string& s) const
     return new BoolWeight;
 }
 
+BoolWeight *
+BoolWeight::set_parameter_values(const string & /*s*/) const
+{
+    return new BoolWeight;
+}
+
 double
 BoolWeight::get_sumpart(Xapian::termcount, Xapian::termcount,
 			Xapian::termcount) const

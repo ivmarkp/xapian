@@ -134,4 +134,10 @@ Weight::unserialise(const string &) const
     throw Xapian::UnimplementedError("unserialise() not supported for this Xapian::Weight subclass");
 }
 
+Weight *
+Weight::set_parameter_values(const string &) const
+{
+    throw Xapian::UnimplementedError("set_parameter_values() not supported for this Xapian::Weight subclass");
+}
+
 }

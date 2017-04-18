@@ -211,6 +211,8 @@ class XAPIAN_VISIBILITY_DEFAULT Weight {
      */
     virtual Weight * unserialise(const std::string & serialised) const;
 
+    virtual Weight * set_parameter_values(const std::string & params) const;
+
     /** Calculate the weight contribution for this object's term to a document.
      *
      *  The parameters give information about the document which may be used
@@ -392,6 +394,8 @@ class XAPIAN_VISIBILITY_DEFAULT BoolWeight : public Weight {
     std::string serialise() const;
     BoolWeight * unserialise(const std::string & serialised) const;
 
+    BoolWeight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterms) const;
@@ -534,6 +538,8 @@ class XAPIAN_VISIBILITY_DEFAULT TfIdfWeight : public Weight {
     std::string serialise() const;
     TfIdfWeight * unserialise(const std::string & serialised) const;
 
+    TfIdfWeight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterm) const;
@@ -638,6 +644,8 @@ class XAPIAN_VISIBILITY_DEFAULT BM25Weight : public Weight {
 
     std::string serialise() const;
     BM25Weight * unserialise(const std::string & serialised) const;
+
+    BM25Weight * set_parameter_values(const std::string & params) const;
 
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
@@ -755,6 +763,8 @@ class XAPIAN_VISIBILITY_DEFAULT BM25PlusWeight : public Weight {
     std::string serialise() const;
     BM25PlusWeight * unserialise(const std::string & serialised) const;
 
+    BM25PlusWeight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterm) const;
@@ -815,6 +825,8 @@ class XAPIAN_VISIBILITY_DEFAULT TradWeight : public Weight {
 
     std::string serialise() const;
     TradWeight * unserialise(const std::string & serialised) const;
+
+    TradWeight * set_parameter_values(const std::string & params) const;
 
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
@@ -889,6 +901,8 @@ class XAPIAN_VISIBILITY_DEFAULT InL2Weight : public Weight {
     std::string serialise() const;
     InL2Weight * unserialise(const std::string & serialised) const;
 
+    InL2Weight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterms) const;
@@ -962,6 +976,8 @@ class XAPIAN_VISIBILITY_DEFAULT IfB2Weight : public Weight {
     std::string serialise() const;
     IfB2Weight * unserialise(const std::string & serialised) const;
 
+    IfB2Weight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterm) const;
@@ -1032,6 +1048,8 @@ class XAPIAN_VISIBILITY_DEFAULT IneB2Weight : public Weight {
 
     std::string serialise() const;
     IneB2Weight * unserialise(const std::string & serialised) const;
+
+    IneB2Weight * set_parameter_values(const std::string & params) const;
 
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
@@ -1109,6 +1127,8 @@ class XAPIAN_VISIBILITY_DEFAULT BB2Weight : public Weight {
     std::string serialise() const;
     BB2Weight * unserialise(const std::string & serialised) const;
 
+    BB2Weight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterms) const;
@@ -1165,6 +1185,8 @@ class XAPIAN_VISIBILITY_DEFAULT DLHWeight : public Weight {
 
     std::string serialise() const;
     DLHWeight * unserialise(const std::string & serialised) const;
+
+    DLHWeight * set_parameter_values(const std::string & params) const;
 
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
@@ -1244,6 +1266,8 @@ class XAPIAN_VISIBILITY_DEFAULT PL2Weight : public Weight {
     std::string serialise() const;
     PL2Weight * unserialise(const std::string & serialised) const;
 
+    PL2Weight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterms) const;
@@ -1322,6 +1346,9 @@ class XAPIAN_VISIBILITY_DEFAULT PL2PlusWeight : public Weight {
     std::string serialise() const;
     PL2PlusWeight * unserialise(const std::string & serialised) const;
 
+    PL2PlusWeight * set_parameter_values(const std::string & params) const;
+
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterms) const;
@@ -1381,6 +1408,9 @@ class XAPIAN_VISIBILITY_DEFAULT DPHWeight : public Weight {
 
     std::string serialise() const;
     DPHWeight * unserialise(const std::string & serialised) const;
+
+    DPHWeight * set_parameter_values(const std::string & params) const;
+
 
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
@@ -1487,6 +1517,8 @@ class XAPIAN_VISIBILITY_DEFAULT LMWeight : public Weight {
     std::string serialise() const;
     LMWeight * unserialise(const std::string & serialised) const;
 
+    LMWeight * set_parameter_values(const std::string & params) const;
+
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,
 		       Xapian::termcount uniqterm) const;
@@ -1517,6 +1549,9 @@ class XAPIAN_VISIBILITY_DEFAULT CoordWeight : public Weight {
 
     std::string serialise() const;
     CoordWeight * unserialise(const std::string & serialised) const;
+
+    CoordWeight * set_parameter_values(const std::string & params) const;
+
 
     double get_sumpart(Xapian::termcount wdf,
 		       Xapian::termcount doclen,

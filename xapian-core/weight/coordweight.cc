@@ -61,6 +61,12 @@ CoordWeight::unserialise(const string& s) const
     return new CoordWeight;
 }
 
+CoordWeight *
+CoordWeight::set_parameter_values(const string & /*s*/) const
+{
+    return new CoordWeight;
+}
+
 double
 CoordWeight::get_sumpart(Xapian::termcount, Xapian::termcount,
 			 Xapian::termcount) const

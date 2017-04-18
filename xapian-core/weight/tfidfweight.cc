@@ -133,6 +133,12 @@ TfIdfWeight::unserialise(const string & s) const
     return new TfIdfWeight(normals, slope, delta);
 }
 
+TfIdfWeight *
+TfIdfWeight::set_parameter_values(const string & /*s*/) const
+{
+    return new TfIdfWeight("n", 1.0, 1.0);
+}
+
 double
 TfIdfWeight::get_sumpart(Xapian::termcount wdf, Xapian::termcount doclen,
 			 Xapian::termcount uniqterms) const

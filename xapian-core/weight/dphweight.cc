@@ -124,6 +124,12 @@ DPHWeight::unserialise(const string& s) const
     return new DPHWeight();
 }
 
+DPHWeight *
+DPHWeight::set_parameter_values(const string & /*s*/) const
+{
+    return new DPHWeight();
+}
+
 double
 DPHWeight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 		       Xapian::termcount) const

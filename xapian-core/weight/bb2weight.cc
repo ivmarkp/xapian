@@ -133,6 +133,13 @@ BB2Weight::unserialise(const string & s) const
     return new BB2Weight(c);
 }
 
+BB2Weight *
+BB2Weight::set_parameter_values(const string & /*s*/) const
+{
+    double c = 1.0;
+    return new BB2Weight(c);
+}
+
 double
 BB2Weight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 		       Xapian::termcount) const

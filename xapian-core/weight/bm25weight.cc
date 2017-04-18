@@ -160,6 +160,17 @@ BM25Weight::unserialise(const string & s) const
     return new BM25Weight(k1, k2, k3, b, min_normlen);
 }
 
+BM25Weight *
+BM25Weight::set_parameter_values(const string & /*s*/) const
+{
+    double k1 = 1.0;
+    double k2 = 1.0;
+    double k3 = 1.0;
+    double b = 1.0;
+    double min_normlen = 1.0;
+    return new BM25Weight(k1, k2, k3, b, min_normlen);
+}
+
 double
 BM25Weight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 			Xapian::termcount) const

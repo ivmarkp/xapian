@@ -168,6 +168,12 @@ DLHWeight::unserialise(const string& s) const
     return new DLHWeight();
 }
 
+DLHWeight *
+DLHWeight::set_parameter_values(const string & /*s*/) const
+{
+    return new DLHWeight();
+}
+
 double
 DLHWeight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 		       Xapian::termcount) const

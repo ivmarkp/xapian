@@ -150,6 +150,19 @@ LMWeight::unserialise(const string & s) const
     return new LMWeight(param_log_, select_smoothing_, param_smoothing1_, param_smoothing2_);
 }
 
+
+LMWeight *
+LMWeight::set_parameter_values(const string & s) const
+{
+    const char *ptr = s.data();
+    const char *end = ptr + s.size();
+    double param_log_ = unserialise_double(&ptr, end);
+    type_smoothing select_smoothing_ = static_cast<type_smoothing>(*(ptr)++);
+    double param_smoothing1_ = unserialise_double(&ptr, end);
+    double param_smoothing2_ = unserialise_double(&ptr, end);
+    return new LMWeight(param_log_, select_smoothing_, param_smoothing1_, param_smoothing2_);
+}
+
 double
 LMWeight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 		      Xapian::termcount uniqterm) const

@@ -227,12 +227,9 @@ set_weighting_scheme(Xapian::Enquire & enq, const string & scheme,
 		return;
 	    }
 	    if (C_isspace(*p)) {
-		double k;
-		if (!double_param(&p, &k))
-		    parameter_error("Parameter is invalid", scheme);
-		if (*p)
-		    parameter_error("Extra data after parameter", scheme);
-		enq.set_weighting_scheme(Xapian::PL2Weight(k));
+	    	Xapian::Registry reg;
+		const Xapian::Weight * wt = reg.get_weighting_scheme("Xapian::PL2Weight");
+		enq.set_weighting_scheme(*wt->set_parameter_values(p));
 		return;
 	    }
 	}

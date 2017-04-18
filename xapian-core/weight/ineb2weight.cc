@@ -106,6 +106,12 @@ IneB2Weight::unserialise(const string & s) const
     return new IneB2Weight(c);
 }
 
+IneB2Weight *
+IneB2Weight::set_parameter_values(const string & /*s*/) const
+{
+    return new IneB2Weight(1.0);
+}
+
 double
 IneB2Weight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 			 Xapian::termcount) const

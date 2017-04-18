@@ -107,6 +107,12 @@ IfB2Weight::unserialise(const string & s) const
     return new IfB2Weight(c);
 }
 
+IfB2Weight *
+IfB2Weight::set_parameter_values(const string & /*s*/) const
+{
+    return new IfB2Weight(1.0);
+}
+
 double
 IfB2Weight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 			Xapian::termcount) const

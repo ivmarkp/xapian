@@ -104,6 +104,12 @@ InL2Weight::unserialise(const string & s) const
     return new InL2Weight(c);
 }
 
+InL2Weight *
+InL2Weight::set_parameter_values(const string & /*s*/) const
+{
+    return new InL2Weight(1.0);
+}
+
 double
 InL2Weight::get_sumpart(Xapian::termcount wdf, Xapian::termcount len,
 			Xapian::termcount) const
